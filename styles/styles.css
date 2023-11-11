@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+
+html {
+  font-size: 18px;
+}
+
+main {
+  width: 375px;
+  position: relative;
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+}
+main .card-back {
+  background-color: transparent;
+  position: absolute;
+  top: 30px;
+  left: 75px;
+}
+main .card-back img {
+  width: 280px;
+  height: auto;
+}
+main .card-back p {
+  position: absolute;
+  color: hsl(0, 0%, 100%);
+  top: 68px;
+  right: 38px;
+  font-size: 0.6rem;
+}
+main .card-front {
+  background-color: transparent;
+  position: absolute;
+  top: 117px;
+  left: 20px;
+}
+main .card-front img#card-front-img {
+  width: 280px;
+  height: auto;
+}
+main .card-front img#card-logo {
+  width: 57px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+}
+main .card-front h1#card-number-card-front {
+  position: absolute;
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%);
+  top: 80px;
+  left: 15px;
+  letter-spacing: 0.14rem;
+}
+main .card-front .name-date {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: -43px;
+  left: 0px;
+  margin: 0 15px;
+}
+main .card-front .name-date .expiration-date {
+  display: flex;
+  flex-direction: row;
+}
+main form {
+  padding: 320px 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+main form label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08rem;
+  color: hsl(278, 68%, 11%);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+main form input {
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid hsl(270, 3%, 87%);
+  margin-bottom: 25px;
+}
+main form input::-webkit-outer-spin-button, main form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+main form input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+main form input::-moz-placeholder {
+  color: hsl(279, 6%, 55%);
+  opacity: 0.6;
+}
+main form input::placeholder {
+  color: hsl(279, 6%, 55%);
+  opacity: 0.6;
+}
+main form p {
+  color: hsl(0, 100%, 66%);
+  font-size: 0.8rem;
+}
+main form p#error-name {
+  position: absolute;
+  top: 398px;
+  left: 21px;
+  display: none;
+}
+main form p#error-card-number {
+  position: absolute;
+  top: 498px;
+  left: 21px;
+  display: none;
+}
+main form .exp-date-cvc {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: "label-exp-month label-exp-month label-cvc" "input-month input-year input-cvc" "error-msg-date error-msg-date error-cvc";
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin-bottom: 10px;
+}
+main form .exp-date-cvc label#label-exp-month {
+  grid-area: label-exp-month;
+}
+main form .exp-date-cvc label#label-cvc {
+  grid-area: label-cvc;
+}
+main form .exp-date-cvc input#month {
+  grid-area: input-month;
+}
+main form .exp-date-cvc input#year {
+  grid-area: input-year;
+}
+main form .exp-date-cvc input#cvc {
+  grid-area: input-cvc;
+}
+main form .exp-date-cvc p#error-msg-date {
+  position: absolute;
+  top: 78px;
+  left: 0px;
+  display: none;
+}
+main form .exp-date-cvc p#error-cvc {
+  position: absolute;
+  top: 78px;
+  left: 185px;
+  display: none;
+}
+main form button {
+  width: 100%;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(270, 3%, 87%);
+  border: none;
+  border-radius: 10px;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+main .thankyou {
+  padding: 320px 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .thankyou img {
+  margin-bottom: 35px;
+}
+main .thankyou h1 {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 0.1rem;
+}
+main .thankyou p {
+  color: hsl(279, 6%, 55%);
+  margin-bottom: 45px;
+}
+main .thankyou button {
+  width: 100%;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(270, 3%, 87%);
+  border: none;
+  border-radius: 10px;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.error {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+@media (min-width: 1400px) {
+  main {
+    background-image: url("../images/bg-main-desktop.png");
+    background-size: 483px 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+  }
+  main .card-front {
+    top: 60px;
+    left: 155px;
+  }
+  main .card-front img#card-front-img {
+    width: 470px;
+    height: auto;
+  }
+  main .card-front img#card-logo {
+    width: 90px;
+    left: 35px;
+    top: 30px;
+  }
+  main .card-front h1#card-number-card-front {
+    font-size: 1.7rem;
+    top: 140px;
+    left: 30px;
+  }
+  main .card-front .name-date {
+    font-size: 0.85rem;
+    top: -55px;
+    left: -5px;
+    margin: 0 35px;
+  }
+  main .card-back {
+    top: 360px;
+    left: 250px;
+  }
+  main .card-back img {
+    width: 440px;
+    height: auto;
+  }
+  main .card-back p {
+    left: 355px;
+    top: 110px;
+    font-size: 0.8rem;
+  }
+  main form {
+    padding: 250px 200px 0 810px;
+    max-width: 1700px;
+  }
+  main form p#error-name {
+    position: absolute;
+    top: 327px;
+    left: 810px;
+    display: none;
+  }
+  main form p#error-card-number {
+    position: absolute;
+    top: 427px;
+    left: 810px;
+    display: none;
+  }
+  main form .exp-date-cvc .exp-date-month-and-error {
+    position: relative;
+  }
+  main form .exp-date-cvc .exp-date-month-and-error p#error-msg-date {
+    position: absolute;
+    top: 53px;
+    left: 0px;
+    display: none;
+  }
+  main form .exp-date-cvc .cvc-value-and-error {
+    position: relative;
+  }
+  main form .exp-date-cvc .cvc-value-and-error p#error-cvc {
+    position: absolute;
+    top: 53px;
+    left: 0px;
+    display: none;
+  }
+  main .thankyou {
+    padding: 280px 200px 0 810px;
+    max-width: 1400px;
+  }
+}/*# sourceMappingURL=styles.css.map */

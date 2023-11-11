@@ -1,0 +1,360 @@
+$gradient1: hsl(249, 99%, 64%);
+$gradient2: hsl(278, 94%, 30%);
+$red: hsl(0, 100%, 66%);
+$white: hsl(0, 0%, 100%);
+$light-grayish-violet: hsl(270, 3%, 87%);
+$dark-grayish-violet: hsl(279, 6%, 55%);
+$very-dark-violet: hsl(278, 68%, 11%);
+
+$font-size: 18px;
+$font-family: "Space Grotesk", sans-serif;
+$font-weight: 500;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+html {
+  font-size: $font-size;
+}
+
+main {
+  width: 375px;
+  position: relative;
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+
+  .card-back {
+    background-color: transparent;
+    position: absolute;
+    top: 30px;
+    left: 75px;
+
+    img {
+      width: 280px;
+      height: auto;
+    }
+
+    p {
+      position: absolute;
+      color: $white;
+      top: 68px;
+      right: 38px;
+      font-size: 0.6rem;
+    }
+  }
+
+  .card-front {
+    background-color: transparent;
+    position: absolute;
+    top: 117px;
+    left: 20px;
+
+    img#card-front-img {
+      width: 280px;
+      height: auto;
+    }
+
+    img#card-logo {
+      width: 57px;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+    }
+
+    h1#card-number-card-front {
+      position: absolute;
+      font-size: 1rem;
+      color: $white;
+      top: 80px;
+      left: 15px;
+      letter-spacing: 0.14rem;
+    }
+
+    .name-date {
+      color: $white;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      top: -43px;
+      left: 0px;
+      margin: 0 15px;
+
+      .expiration-date {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+
+  form {
+    padding: 320px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+
+    label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.08rem;
+      color: $very-dark-violet;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 10px 15px;
+      width: 100%;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      border: 1px solid $light-grayish-violet;
+      margin-bottom: 25px;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &[type="number"] {
+        -moz-appearance: textfield; /* Firefox */
+      }
+
+      &::placeholder {
+        color: $dark-grayish-violet;
+        opacity: 0.6;
+      }
+    }
+
+    p {
+      color: $red;
+      font-size: 0.8rem;
+
+      &#error-name {
+        position: absolute;
+        top: 398px;
+        left: 21px;
+        display: none;
+      }
+
+      &#error-card-number {
+        position: absolute;
+        top: 498px;
+        left: 21px;
+        display: none;
+      }
+    }
+
+    .exp-date-cvc {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "label-exp-month label-exp-month label-cvc"
+        "input-month input-year input-cvc"
+        "error-msg-date error-msg-date error-cvc";
+      column-gap: 10px;
+      margin-bottom: 10px;
+
+      label#label-exp-month {
+        grid-area: label-exp-month;
+      }
+
+      label#label-cvc {
+        grid-area: label-cvc;
+      }
+
+      input {
+        &#month {
+          grid-area: input-month;
+        }
+        &#year {
+          grid-area: input-year;
+        }
+        &#cvc {
+          grid-area: input-cvc;
+        }
+      }
+
+      p#error-msg-date {
+        position: absolute;
+        top: 78px;
+        left: 0px;
+        display: none;
+      }
+
+      p#error-cvc {
+        position: absolute;
+        top: 78px;
+        left: 185px;
+        display: none;
+      }
+    }
+
+    button {
+      width: 100%;
+      background-color: $very-dark-violet;
+      color: $light-grayish-violet;
+      border: none;
+      border-radius: 10px;
+      padding: 18px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  }
+
+  .thankyou {
+    padding: 320px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      letter-spacing: 0.1rem;
+    }
+
+    p {
+      color: $dark-grayish-violet;
+      margin-bottom: 45px;
+    }
+
+    button {
+      width: 100%;
+      background-color: $very-dark-violet;
+      color: $light-grayish-violet;
+      border: none;
+      border-radius: 10px;
+      padding: 18px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.error {
+  border: 1px solid $red;
+}
+
+@media (min-width: 1400px) {
+  main {
+    background-image: url("../images/bg-main-desktop.png");
+    background-size: 483px 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+
+    .card-front {
+      top: 60px;
+      left: 155px;
+
+      img#card-front-img {
+        width: 470px;
+        height: auto;
+      }
+
+      img#card-logo {
+        width: 90px;
+        left: 35px;
+        top: 30px;
+      }
+
+      h1#card-number-card-front {
+        font-size: 1.7rem;
+        top: 140px;
+        left: 30px;
+      }
+
+      .name-date {
+        font-size: 0.85rem;
+        top: -55px;
+        left: -5px;
+        margin: 0 35px;
+      }
+    }
+
+    .card-back {
+      top: 360px;
+      left: 250px;
+
+      img {
+        width: 440px;
+        height: auto;
+      }
+
+      p {
+        left: 355px;
+        top: 110px;
+        font-size: 0.8rem;
+      }
+    }
+
+    form {
+      padding: 250px 200px 0 810px;
+      max-width: 1700px;
+
+      p {
+        &#error-name {
+          position: absolute;
+          top: 327px;
+          left: 810px;
+          display: none;
+        }
+
+        &#error-card-number {
+          position: absolute;
+          top: 427px;
+          left: 810px;
+          display: none;
+        }
+      }
+
+      .exp-date-cvc {
+        .exp-date-month-and-error {
+          position: relative;
+
+          p#error-msg-date {
+            position: absolute;
+            top: 53px;
+            left: 0px;
+            display: none;
+          }
+        }
+
+        .cvc-value-and-error {
+          position: relative;
+
+          p#error-cvc {
+            position: absolute;
+            top: 53px;
+            left: 0px;
+            display: none;
+          }
+        }
+      }
+    }
+    .thankyou {
+      padding: 280px 200px 0 810px;
+      max-width: 1400px;
+    }
+  }
+}
